@@ -1,0 +1,299 @@
+[
+    {
+        "Edges": [
+            {
+                "ID": "borker1-cluster1",
+                "Parent": "broker1",
+                "Child": "cluster1",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "gateway11-gateway21",
+                "Parent": "gateway11",
+                "Child": "gateway21",
+                "Metadata": {
+                    "RelationType": "ipsec"
+                }
+            },
+            {
+                "ID": "cluster1-node11",
+                "Parent": "cluster1",
+                "Child": "node11",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node11-nginx",
+                "Parent": "node11",
+                "Child": "nginx",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node11-nginx-ip",
+                "Parent": "node11",
+                "Child": "nginx",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "node11-routeagent11",
+                "Parent": "node11",
+                "Child": "routeagent11",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node11-gateway11",
+                "Parent": "node11",
+                "Child": "gateway11",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node11-gateway11-ip",
+                "Parent": "node11",
+                "Child": "gateway11",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "borker1-cluster2",
+                "Parent": "broker1",
+                "Child": "cluster2",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "cluster2-node21",
+                "Parent": "cluster2",
+                "Child": "node21",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node21-gateway21",
+                "Parent": "node21",
+                "Child": "gateway21",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node21-gateway21-ip",
+                "Parent": "node21",
+                "Child": "gateway21",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "node21-routeagent21",
+                "Parent": "node21",
+                "Child": "routeagent21",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node21-routeagent21-ip",
+                "Parent": "node21",
+                "Child": "routeagent21",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "cluster2-node22",
+                "Parent": "cluster2",
+                "Child": "node22",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node22-routeagent22",
+                "Parent": "node22",
+                "Child": "routeagent22",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node22-routeagent22-ip",
+                "Parent": "node22",
+                "Child": "routeagent22",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "node22-busybox",
+                "Parent": "node22",
+                "Child": "busybox",
+                "Metadata": {
+                    "RelationType": "ownership"
+                }
+            },
+            {
+                "ID": "node22-busybox-ip",
+                "Parent": "node22",
+                "Child": "busybox",
+                "Metadata": {
+                    "RelationType": "ip"
+                }
+            },
+            {
+                "ID": "routeagent22-routeagent21",
+                "Parent": "routeagent22",
+                "Child": "routeagent21",
+                "Metadata": {
+                    "RelationType": "vxnet"
+                }
+            }
+        ],
+        "Nodes": [
+            {
+                "ID": "broker1",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "broker1",
+                    "Type": "broker",
+                    "Submariner": {
+                        "Clusters": [
+                            "cluster1",
+                            "cluster2"
+                        ]
+                    }
+                }
+            },
+            {
+                "ID": "cluster1",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "cluster1",
+                    "Type": "cluster",
+                    "K8s": {
+                        "PodCidr": "10.95.0.0/16",
+                        "ServiceCidr": "10.245.0.0/16"
+                    }
+                }
+            },
+            {
+                "ID": "node11",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "node11",
+                    "Type": "node",
+                    "IP": "172.17.0.9"
+                }
+            },
+            {
+                "ID": "nginx",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "0_nginx",
+                    "Type": "pod",
+                    "IP": "10.245.0.4"
+                }
+            },
+            {
+                "ID": "routeagent11",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "1_routeagent11",
+                    "Type": "routeagent"
+                }
+            },
+            {
+                "ID": "gateway11",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "2_gateway11",
+                    "Type": "gateway"
+                }
+            },
+            {
+                "ID": "cluster2",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "cluster2",
+                    "Type": "cluster",
+                    "K8s": {
+                        "PodCidr": "10.96.0.0/16",
+                        "ServiceCidr": "10.246.0.0/16"
+                    }
+               }
+            },
+            {
+                "ID": "node21",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "node21",
+                    "Type": "node",
+                    "IP": "172.17.0.5"
+                }
+            },
+            {
+                "ID": "gateway21",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "3_gateway21",
+                    "Type": "gateway"
+                }
+            },
+            {
+                "ID": "routeagent21",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "4_routeagent21",
+                    "Type": "routeagent"
+                }
+            },
+            {
+                "ID": "node22",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "node22",
+                    "Type": "node",
+                    "IP": "172.17.0.7"
+                }
+            },
+            {
+                "ID": "routeagent22",
+                "Metadata": {
+                    "Manager": "submariner",
+                    "Name": "5_routeagent22",
+                    "Type": "routeagent"
+                }
+            },
+            {
+                "ID": "busybox",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "6_busybox",
+                    "Type": "pod",
+                    "IP": "10.246.128.10"
+                }
+            },
+            {
+                "ID": "node22",
+                "Metadata": {
+                    "Manager": "k8s",
+                    "Name": "node22",
+                    "Type": "node"
+                }
+            }
+        ]
+    }
+]

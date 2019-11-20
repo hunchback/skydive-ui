@@ -69,6 +69,7 @@ var config = {
                 break
             case "cluster":
                 attrs.icon = "/assets/icons/cluster.png"
+                attrs.weight = 3
                 break
             case "configmap":
                 attrs.icon = "/assets/icons/configmap.png"
@@ -96,6 +97,7 @@ var config = {
                 break
             case "node":
                 attrs.icon = "\uf109"
+                attrs.weight = 4
                 break
             case "persistentvolume":
                 attrs.icon = "/assets/icons/persistentvolume.png"
@@ -105,6 +107,7 @@ var config = {
                 break
             case "pod":
                 attrs.icon = "/assets/icons/pod.png"
+                attrs.weight = 5
                 break
             case "networkpolicy":
                 attrs.icon = "/assets/icons/networkpolicy.png"
@@ -129,6 +132,18 @@ var config = {
                 break
             case "storageclass":
                 attrs.icon = "/assets/icons/storageclass.png"
+                break
+            case "broker":
+                attrs.icon = "/assets/icons/broker.png"
+                attrs.weight = 2
+                break
+            case "gateway":
+                attrs.icon = "/assets/icons/gateway.png"
+                attrs.weight = 5
+                break
+            case "routeagent":
+                attrs.icon = "/assets/icons/routeagent.png"
+                attrs.weight = 5
                 break
             default:
                 attrs.icon = "\uf192"
@@ -155,13 +170,9 @@ var config = {
         return attrs
     },
     "nodeTags": function (data) {
-        if (data.Manager && data.Manager === "k8s") {
-            return ["kubernetes"]
-        } else {
-            return ["infrastructure"]
-        }
+        return ["submariner"]
     },
-    "defaultNodeTag": "infrastructure",
+    "defaultNodeTag": "submariner",
     "nodeTabTitle": function (node) {
         return node.data.Name.substring(0, 8)
     },
@@ -171,6 +182,10 @@ var config = {
     "weightTitles": {
         0: "Not classified",
         1: "Kubernetes",
+        2: "Brokers",
+        3: "Clusters",
+        4: "Nodes",
+        5: "Pods",
         10: "Fabric",
         13: "Physical",
         14: "Bridges",
